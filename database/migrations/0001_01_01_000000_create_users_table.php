@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('nama'); // Nama mahasiswa/admin
+            $table->string('nim')->unique(); // NIM mahasiswa atau username admin
             $table->string('email')->unique();
+            $table->string('kontak'); // Nomor telepon/WhatsApp
+            $table->enum('role', ['mahasiswa', 'admin'])->default('mahasiswa'); // Role user
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
