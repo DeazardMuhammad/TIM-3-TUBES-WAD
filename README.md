@@ -1,61 +1,140 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🔍 Lost & Found Campus
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<div align="center">
+  <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel">
+  <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
+  <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
+  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
+</div>
 
-## About Laravel
+<div align="center">
+  <h3>📱 Aplikasi Lost & Found berbasis web untuk kampus</h3>
+  <p>Platform digital untuk membantu mahasiswa menemukan barang yang hilang atau melaporkan barang yang ditemukan di area kampus</p>
+</div>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Fitur Utama
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 👥 **Untuk Mahasiswa**
+- 🔐 **Autentikasi Aman** - Login/Register dengan validasi NIM
+- 📝 **Lapor Barang Hilang** - Upload foto dan deskripsi detail
+- 🎯 **Lapor Barang Ditemukan** - Bantu teman menemukan barang mereka
+- 🔍 **Pencarian Cerdas** - Filter berdasarkan kategori, lokasi, dan tanggal
+- 📊 **Dashboard Personal** - Statistik laporan dan status terkini
+- 📱 **Responsive Design** - Akses mudah dari desktop dan mobile
 
-## Learning Laravel
+### 👨‍💼 **Untuk Admin**
+- 🛠️ **Manajemen Kategori** - CRUD kategori barang
+- 📈 **Dashboard Admin** - Overview statistik keseluruhan
+- ✅ **Verifikasi Laporan** - Approve/reject laporan mahasiswa
+- 👥 **Manajemen User** - Kelola akun mahasiswa
+- 📋 **Export Data** - Laporan dalam format yang diinginkan
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🏗️ Teknologi yang Digunakan
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+| Teknologi | Versi | Deskripsi |
+|-----------|-------|-----------|
+| **Laravel** | 10.x | PHP Framework untuk backend |
+| **MySQL** | 8.0+ | Database relational |
+| **Bootstrap** | 5.3 | CSS Framework untuk UI |
+| **Laravel Sanctum** | 3.x | API authentication |
+| **Blade** | - | Template engine Laravel |
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 📋 Prerequisites
 
-### Premium Partners
+Pastikan sistem Anda memiliki:
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+- ✅ PHP >= 8.1
+- ✅ Composer
+- ✅ MySQL >= 8.0
+- ✅ Node.js & NPM (opsional untuk asset compilation)
+- ✅ Web server (Apache/Nginx) atau PHP built-in server
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🚀 Instalasi
 
-## Code of Conduct
+### 1️⃣ Clone Repository
+```bash
+git clone https://github.com/username/lost-and-found.git
+cd lost-and-found
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 2️⃣ Install Dependencies
+```bash
+composer install
+```
 
-## Security Vulnerabilities
+### 3️⃣ Environment Setup
+```bash
+# Copy environment file
+cp .env.example .env
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Generate application key
+php artisan key:generate
+```
 
-## License
+### 4️⃣ Database Configuration
+Edit file `.env` dan sesuaikan konfigurasi database:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=lost_and_found
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 5️⃣ Database Setup
+```bash
+# Jalankan migrasi
+php artisan migrate
+
+# Seed data awal
+php artisan db:seed
+
+# Buat symbolic link untuk storage
+php artisan storage:link
+```
+
+### 6️⃣ Jalankan Aplikasi
+```bash
+php artisan serve
+```
+
+Aplikasi akan berjalan di `http://localhost:8000`
+
+---
+
+## 👤 Default User Accounts
+
+Setelah menjalankan seeder, Anda dapat menggunakan akun berikut:
+
+### 🔑 Admin Account
+- **Email:** admin@lostandfound.com
+- **Password:** admin123
+- **Role:** admin
+
+### 👨‍🎓 Student Account
+- **Email:** mahasiswa@lostandfound.com
+- **Password:** mahasiswa123
+- **Role:** mahasiswa
+
+---
+
+### 🔗 Storage Link
+Jika symbolic link belum dibuat:
+```bash
+php artisan storage:link
+```
+
+---
+
+<div align="center">
+  <p><strong>⭐ Untuk Memenuhi Tugas Besar WAD Semester 4 ⭐</strong></p>
+</div>
