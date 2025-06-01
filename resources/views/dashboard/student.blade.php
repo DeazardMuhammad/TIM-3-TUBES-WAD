@@ -63,7 +63,7 @@
     </div>
 </div>
 
-<!-- Statistik Sederhana -->
+<!-- Total Barang  -->
 <div class="row mt-4">
     <div class="col-md-3 mb-3">
         <div class="card text-center">
@@ -102,7 +102,7 @@
     </div>
 </div>
 
-<!-- Barang Terbaru -->
+<!-- Barang Hilang dan Ditemukan Terbaru -->
 <div class="row mt-4">
     <div class="col-md-6">
         <div class="card">
