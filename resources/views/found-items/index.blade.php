@@ -210,7 +210,7 @@
         @endif
     </div>
 
-    <!-- Pagination -->
+    
     @if($foundItems->hasPages())
         <div class="row mt-4">
             <div class="col-12 d-flex justify-content-center">
