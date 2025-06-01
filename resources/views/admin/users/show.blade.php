@@ -73,10 +73,8 @@
                             <strong>Kontak:</strong>
                         </div>
                         <div class="col-sm-9">
-                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $user->kontak) }}" 
-                               class="btn btn-success btn-sm" 
-                               target="_blank">
-                                <i class="bi bi-whatsapp"></i> {{ $user->kontak }}
+                            <a> 
+                                {{ $user->kontak }}
                             </a>
                         </div>
                     </div>

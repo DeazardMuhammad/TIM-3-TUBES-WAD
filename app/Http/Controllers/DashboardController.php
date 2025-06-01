@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\LostItem;
+use App\Models\FoundItem;
+use App\Models\Kategori;
+use App\Models\User;
 
-class DashboardController extends ControllerG
+class DashboardController extends Controller
 {
-   
+    /**
+     * Dashboard untuk mahasiswa
+     */
     public function index()
     {
         $user = Auth::user();
@@ -38,7 +45,9 @@ class DashboardController extends ControllerG
         ));
     }
 
-   
+    /**
+     * Dashboard untuk admin
+     */
     public function admin()
     {
 
@@ -80,5 +89,3 @@ class DashboardController extends ControllerG
         ));
     }
 }
-
-
