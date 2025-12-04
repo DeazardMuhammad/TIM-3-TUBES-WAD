@@ -68,7 +68,7 @@
             @if($foundItem->gambar)
             <div class="col-md-6">
                 <label class="form-label">Foto Saat Ini</label>
-                <div><img src="{{ $foundItem->getImageUrl() }}" class="img-thumbnail" style="max-height:150px;"></div>
+                <div><img src="{{ asset('storage/images/found/' . $foundItem->gambar) }}" class="img-thumbnail" style="max-height:150px;"></div>
             </div>
             @endif
 

@@ -83,5 +83,69 @@ class User extends Authenticatable
     {
         return $this->role === 'mahasiswa';
     }
+
+    /**
+     * Relasi ke notifications
+     */
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
+
+    /**
+     * Relasi ke claims
+     */
+    public function claims()
+    {
+        return $this->hasMany(Claim::class);
+    }
+
+    /**
+     * Relasi ke notes (admin only)
+     */
+    public function notes()
+    {
+        return $this->hasMany(Note::class, 'admin_id');
+    }
+
+    /**
+     * Relasi ke feedback
+     */
+    public function feedbacks()
+    {
+        return $this->hasMany(Feedback::class);
+    }
+
+    /**
+     * Relasi ke messages sent
+     */
+    public function sentMessages()
+    {
+        return $this->hasMany(Message::class, 'sender_id');
+    }
+
+    /**
+     * Relasi ke messages received
+     */
+    public function receivedMessages()
+    {
+        return $this->hasMany(Message::class, 'receiver_id');
+    }
+
+    /**
+     * Get unread notifications count
+     */
+    public function unreadNotificationsCount()
+    {
+        return $this->notifications()->where('read_status', false)->count();
+    }
+
+    /**
+     * Get unread messages count
+     */
+    public function unreadMessagesCount()
+    {
+        return $this->receivedMessages()->where('read_status', false)->count();
+    }
     
 }

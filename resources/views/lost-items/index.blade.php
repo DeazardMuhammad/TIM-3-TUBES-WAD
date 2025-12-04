@@ -112,10 +112,11 @@
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
                         @if($item->gambar)
-                            <img src="{{ $item->getImageUrl() }}" 
+                            <img src="{{ asset('storage/images/lost/' . $item->gambar) }}" 
                                  class="card-img-top" 
                                  style="height: 200px; object-fit: cover;" 
-                                 alt="{{ $item->nama }}">
+                                 alt="{{ $item->nama }}"
+                                 onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'card-img-top bg-light d-flex align-items-center justify-content-center\' style=\'height: 200px;\'><i class=\'bi bi-image text-muted\' style=\'font-size: 3rem;\'></i></div>';">
                         @else
                             <div class="card-img-top bg-light d-flex align-items-center justify-content-center" 
                                  style="height: 200px;">
@@ -125,24 +126,24 @@
                         
                         <div class="card-body d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-start mb-2">
-                                <h5 class="card-title">{{ $item->nama }}</h5>
+                                <h5 class="card-title">{{ $item->nama ?? 'Tidak ada nama' }}</h5>
                                 <span class="badge bg-{{ $item->status == 'belum diambil' ? 'danger' : 'success' }}">
                                     {{ $item->status == 'belum diambil' ? 'Belum Ditemukan' : 'Sudah Ditemukan' }}
                                 </span>
                             </div>
                             
                             <p class="card-text text-muted small mb-2">
-                                <i class="bi bi-geo-alt"></i> {{ $item->lokasi }}
+                                <i class="bi bi-geo-alt"></i> {{ $item->lokasi ?? '-' }}
                             </p>
                             <p class="card-text text-muted small mb-2">
-                                <i class="bi bi-calendar"></i> {{ $item->tanggal->format('d F Y') }}
+                                <i class="bi bi-calendar"></i> {{ optional($item->tanggal)->format('d F Y') ?? '-' }}
                             </p>
                             <p class="card-text text-muted small mb-2">
-                                <i class="bi bi-tag"></i> {{ $item->kategori->nama }}
+                                <i class="bi bi-tag"></i> {{ optional($item->kategori)->nama ?? '-' }}
                             </p>
                             
                             @if($item->deskripsi)
-                                <p class="card-text">{{ Str::limit($item->deskripsi, 100) }}</p>
+                                <p class="card-text">{{ Str::limit($item->deskripsi ?? '-', 100) }}</p>
                             @endif
                             
                             <div class="mt-auto">

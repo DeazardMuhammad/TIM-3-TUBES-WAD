@@ -81,7 +81,7 @@
                 @if($lostItem->gambar)
                     <div class="mb-3">
                         <label class="form-label">Foto Saat Ini</label><br>
-                        <img src="{{ $lostItem->getImageUrl() }}" class="img-thumbnail" style="max-width: 180px;">
+                        <img src="{{ asset('storage/images/lost/' . $lostItem->gambar) }}" class="img-thumbnail" style="max-width: 180px;">
                     </div>
                 @endif
 

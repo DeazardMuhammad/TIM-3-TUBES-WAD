@@ -18,6 +18,14 @@ class FoundItemController extends Controller
     {
         $query = FoundItem::with(['user', 'kategori']);
         
+        // Only show approved items to non-admin users (but show their own pending items)
+        if (!Auth::user()->isAdmin()) {
+            $query->where(function($q) {
+                $q->where('status_verifikasi', 'approved')
+                  ->orWhere('user_id', Auth::id());
+            });
+        }
+        
         // Filter berdasarkan search
         if ($request->filled('search')) {
             $search = $request->search;

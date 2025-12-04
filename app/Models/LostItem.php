@@ -27,6 +27,10 @@ class LostItem extends Model
         'status',
         'kategori_id',
         'user_id',
+        'status_verifikasi',
+        'alasan_reject',
+        'verified_at',
+        'verified_by',
     ];
 
     /**
@@ -36,6 +40,7 @@ class LostItem extends Model
      */
     protected $casts = [
         'tanggal' => 'date',
+        'verified_at' => 'datetime',
     ];
 
     /**
@@ -81,13 +86,47 @@ class LostItem extends Model
     }
 
     /**
+     * Relasi ke verifier (admin yang memverifikasi)
+     */
+    public function verifier()
+    {
+        return $this->belongsTo(User::class, 'verified_by');
+    }
+
+    /**
+     * Relasi ke notes
+     */
+    public function notes()
+    {
+        return Note::where('report_type', 'lost')->where('report_id', $this->id)->get();
+    }
+
+    /**
+     * Scope untuk filter berdasarkan status verifikasi
+     */
+    public function scopePending($query)
+    {
+        return $query->where('status_verifikasi', 'pending');
+    }
+
+    public function scopeApproved($query)
+    {
+        return $query->where('status_verifikasi', 'approved');
+    }
+
+    public function scopeRejected($query)
+    {
+        return $query->where('status_verifikasi', 'rejected');
+    }
+
+    /**
      * Get full image URL
      */
     public function getImageUrl()
     {
-        if ($this->gambar && Storage::disk('public')->exists('images/lost/' . $this->gambar)) {
+        if ($this->gambar) {
             return asset('storage/images/lost/' . $this->gambar);
         }
-        return null; // Mengembalikan null jika tidak ada gambar atau file tidak ditemukan
+        return null;
     }
 }
